@@ -14,46 +14,28 @@ o implement the analytical logic, I wrote DAX measures to aggregate and rank con
 2. A measure Top Renewable Source summarises consumption by energy source and returning the highest contributor within the current filter context
 3. Implemented context-aware measures to ensure all visuals respond accurately to slicer selections. 
  
+## 📌 Results
+1. KPI Summary - There are three essential Key Performance Indicators (KPIs) displayed as card visuals in PowerBI with contextual labelling to support quick decision-making.
+A. Total Energy Consumption (TBTUs) – shows the total 384.04K TBTUs of renewable energy use from 1970-2023
+B. Top Renewable Source – identifies the leading energy source by consumption volume
+C. Dominant Sector – highlights the sector driving the majority of renewable energy demand
 
-## 📌 Model
-The model consists of a central fact table linked to a dedicated date table. This simple dimensional structure enables accurate time-based aggregation and responsive filtering across the dashboard.
+2. Trend Analysis
+The long-term trend shows three clear phases in renewable energy consumption. Between 1970 and 1990, consumption remained largely flat, indicating limited policy and technological support. From 1990 to 2010, consumption increased steadily, reaching around 8,000 TBTUs by 2010 as early incentives emerged. After 2010, growth accelerated sharply, rising to over 12,500 TBTUs by 2023—a 56% increase in 13 years and a 257% increase overall since 1970.
 
-<p align="center">
-  <img src="Screenshot 2026-02-21 at 13.31.40.png"250"/>
-</p>
+3. Sector Composition
+The top three sectors (Industrial, Electric Power, and Transportation) account for 88.93% of all renewable energy consumption. This indicates that while renewable energy deployment is widespread, adoption is unevenly distributed.
 
-## 📌 Key Measures and Calculations
-Total Transaction Amount - This measure calculates the total value of all transactions
+4. Renewable Energy Source Ranking
+Biomass and Wood Energy together account for 66.1% (254.19K TBTUs) of all renewable energy consumption. The top three sources represent 78.7% of total consumption, indicating strong concentration in established renewable technologies.
 
-```DAX
-Total Transaction Amount = SUM('bank transaction_data'[Transaction Amount])
-```
+## 📌 Interpretation
+US renewable energy consumption has shifted from slow growth to rapid expansion since 2010, increasing by 56% in the past decade. Consumption is heavily concentrated in three sectors which are ndustrial, electric power and transportation, they account for 88.93% of total use, while residential and commercial adoption remains limited. Biomass and wood energy dominate the mix at 66.1%, highlighting reliance on established technologies and limited diversification into newer renewable sources.
 
-```DAX
-Total Transactions = DISTINCTCOUNT('bank transaction_data'[Transaction ID])
-```
+## 🛠️ Conclusion and Recommendation
+Renewable energy growth requires greater diversification, as biomass accounts for 66.1% of consumption. Increased investment in solar, wind and geothermal energy, alongside targeted incentives for residential and commercial adoption, would improve system resilience while maintaining support for high-consumption sectors. With consumption growing 56% since 2010, continued monitoring and long-term planning are essential to sustain progress.
 
-```DAX
-Bandwidth Group = SWITCH ( TRUE(), [Slice Bandwidth (Mbps)] >= 50 && [Slice Bandwidth (Mbps)] < 100, "50–100 Mbps", [Slice Bandwidth (Mbps)] >= 100 && [Slice Bandwidth (Mbps)] < 150, "100–150 Mbps", [Slice Bandwidth (Mbps)] >= 150 && [Slice Bandwidth (Mbps)] <= 250, "150–250 Mbps", "Out of Range" )
-```
-
-## 🛠️ Tools Used
-Power BI for data modelling, visualisation, and dashboard development
-DAX for calculated measures and bandwidth grouping
-
-## 📌 Dashboard Design and Exploration
-The dashboard is structured to move from high-level performance metrics to more detailed analysis. Summary KPIs provide immediate visibility into transaction volume and value, while bandwidth group visuals highlight how activity is distributed across network capacity tiers. Interactive filters allow users to drill into specific transaction segments and explore patterns in more detail.
-
-## 📌 Key Insights
-The dashboard shows 1,000 transactions with a total value of approximately £771K. Transaction outcomes are almost evenly split, with 513 failed and 487 successful transactions, highlighting potential reliability issues within the transaction process. Transaction activity is most concentrated in the 150–250 Mbps bandwidth group, which records the highest volume of transactions. Lower bandwidth ranges handle fewer transactions, indicating that higher network capacity supports the bulk of processing. Transaction types are evenly distributed, with Transfers (37.4%), Deposits (31.6%), and Withdrawals (31%), suggesting no single transaction type disproportionately drives system load. Fraud-flagged transactions account for just over half of total activity (51.9%) and are again most concentrated in the 150–250 Mbps bandwidth tier, reinforcing the link between higher bandwidth usage and increased risk. Transaction and fraud activity are primarily concentrated in North America and Europe.
-
-## 📌 Business Value
-The concentration of activity and fraud in the 150–250 Mbps range highlights this tier as a priority for capacity planning, monitoring, and optimisation. The high proportion of failed transactions indicates areas where performance improvements could significantly increase system reliability. By linking transaction value, bandwidth usage, and fraud indicators, the dashboard supports targeted risk monitoring and more efficient allocation of infrastructure resources. 
-
-## 📌 Conclusion
-This project demonstrates how combining transaction metrics with bandwidth analysis can reveal where system demand and risk are highest. The Power BI dashboard provides a clear, practical view of transaction performance, supporting better operational monitoring and informed decisions around network capacity and fraud control.
-
-Interact with the dashboard - https://app.powerbi.com/groups/me/reports/2e0b58a6-e735-4c45-92f4-31a6c571e1d5/d74678b5934723b76859?experience=power-bi
+Interact with the dashboard - [https://app.powerbi.com/groups/me/reports/2e0b58a6-e735-4c45-92f4-31a6c571e1d5/d74678b5934723b76859?experience=power-bi](https://app.powerbi.com/groups/me/reports/e6e6151f-b33c-42bd-b886-d4f8dc4122af/dbe1b43f1b5a9fa3b247?experience=power-bi)
 
 
 <p align="center">
