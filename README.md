@@ -19,7 +19,7 @@ o implement the analytical logic, I wrote DAX measures to aggregate and rank con
 The model consists of a central fact table linked to a dedicated date table. This simple dimensional structure enables accurate time-based aggregation and responsive filtering across the dashboard.
 
 <p align="center">
-  <img src="Screenshot 2026-02-21 at 13.15.28.png"250"/>
+  <img src="Screenshot 2026-02-21 at 13.31.40.png"250"/>
 </p>
 
 ## 📌 Key Measures and Calculations
