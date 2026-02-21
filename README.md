@@ -57,13 +57,6 @@ Interact with the dashboard - https://app.powerbi.com/groups/me/reports/2e0b58a6
 
 
 <p align="center">
-  <img src="Screenshot 2026-02-21 at 13.15.28.png"250"/>
+  <img src="Screenshot 2026-02-21 at 13.31.55.png"250"/>
 </p>
 
-<p align="center">
-  <img src="Screenshot 2026-02-21 at 13.15.37.png"250"/>
-</p>
-
-<p align="center">
-  <img src="Screenshot 2026-02-21 at 13.15.45.png"250"/>
-</p>
