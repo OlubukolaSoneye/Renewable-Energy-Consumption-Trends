@@ -8,7 +8,10 @@ Governments and policymakers rely on long-term renewable energy data to inform i
 Before building the visuals, I explored the dataset directly to understand its structure, completeness in power query. Reviewed the dataset for missing, null, or zero values that could distort aggregations or trends, there were no missing values present. The original dataset was in a wide format, to make the data suitable for analysis I unpivoted all columns, retaining only  (Year, Month, Sector). This transformation normalised the dataset into a long format, enabling aggregation, filtering.
 
 ## 📌 DAX Measures Used
-o implement the analytical logic, I wrote DAX measures to aggregate and rank consumption values dynamically.
+To implement the analytical logic, I wrote DAX measures to aggregate and rank consumption values dynamically.
+
+## 📌 Model
+The model consists of a central fact table linked to a dedicated date table. This simple dimensional structure enables accurate time-based aggregation and responsive filtering across the dashboard.
 
 1. The core measure, Total Energy Consumption, sums renewable energy use across all records and forms the basis for trend analysis, rankings, and KPIs
 2. A measure Top Renewable Source summarises consumption by energy source and returning the highest contributor within the current filter context
